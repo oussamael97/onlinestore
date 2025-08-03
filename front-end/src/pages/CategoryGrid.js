@@ -29,7 +29,7 @@ const CategoryGrid = () => {
   return (
     <section className="category-grid">
       <div className="main-title">
-        <h2>ALLERA LA MODE</h2>
+        <h2>ALLER A LA MODE</h2>
       </div>
       
       <div className="categories-container">
