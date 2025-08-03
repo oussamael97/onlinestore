@@ -1,0 +1,94 @@
+/* Home.css - Updated for closer title and button */
+.home-background {
+  background-image: url('../../public/image/freestocks-_3Q3tsJ01nc-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  animation: flow 30s ease-in-out infinite;
+}
+
+/* Updated content container */
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Controls space between title and button */
+}
+
+/* Title styling */
+.welcome-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 0; /* Removed extra margin */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  color: white;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Button styling - now part of the content flow */
+.shop-now-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid white;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite;
+  z-index: 2;
+  margin-top: 0; /* Removed extra margin */
+}
+
+.shop-now-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.shop-now-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Keep all your existing animations and other styles below */
+@keyframes flow {
+  0% { background-position: center; }
+  50% { background-position: center 20%; }
+  100% { background-position: center; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-content {
+    gap: 1rem; /* Smaller gap on mobile */
+  }
+  
+  .welcome-title {
+    font-size: 2rem;
+  }
+  
+  .shop-now-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}

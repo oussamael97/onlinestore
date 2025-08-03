@@ -1,0 +1,12 @@
+/* Global responsive rules (applied everywhere) */
+@media (max-height: 500px) {
+  .hero-content { top: 40%; }
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #111; }
+}
+/* In global CSS */
+.other-page .NavDiv {
+  background: aliceblue; /* Solid color for other pages */
+}
