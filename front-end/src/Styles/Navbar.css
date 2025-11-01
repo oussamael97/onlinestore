@@ -1,3 +1,4 @@
+/* Navbar container — subtle light-gray background so links are readable */
 .navbar-container {
   position: fixed;
   top: 0;
@@ -5,15 +6,19 @@
   width: 100%;
   z-index: 1000;
   padding: 15px 0;
-  background: transparent;
-  transition: background 0.3s ease;
+  background: rgba(245, 247, 250, 0.95); /* light gray, almost white */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px); /* subtle blur to separate content under the bar */
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
 }
 
+/* Keep the scrolled state darker for stronger contrast if you want */
 .navbar-container.scrolled {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(230, 235, 240, 0.98); /* slightly darker gray on scroll */
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.12);
 }
 
+/* Navbar layout */
 .navbar {
   display: flex;
   justify-content: flex-end;
@@ -22,9 +27,10 @@
   gap: 30px;
 }
 
+/* Links — dark color to read on the gray background */
 .nav-link {
   text-decoration: none;
-  color: white;
+  color: #10243a; /* dark-blue/charcoal color */
   font-size: 1.1rem;
   font-weight: 500;
   padding: 8px 15px;
@@ -33,18 +39,20 @@
   position: relative;
 }
 
+/* Hover: keep readable but subtle */
 .nav-link:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
+  color: #0b2a57;
+  background: rgba(16, 36, 58, 0.06);
 }
 
+/* Underline animation */
 .nav-link::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  background: white;
-  bottom: 0;
+  background: #10243a;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
   transition: width 0.3s ease;
@@ -60,7 +68,7 @@
     padding: 0 20px;
     gap: 15px;
   }
-  
+
   .nav-link {
     font-size: 0.9rem;
     padding: 6px 12px;
