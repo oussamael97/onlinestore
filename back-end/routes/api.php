@@ -4,11 +4,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
+// Login route
 Route::post('/login', [AuthController::class, 'login']);
 
+// Authenticated user info (requires Sanctum token)
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    return response()->json($request->user());
 });
-Route::get('/ping', function() {
+
+// Test route
+Route::get('/ping', function () {
     return response()->json(['pong' => true]);
 });
